@@ -1,4 +1,3 @@
-import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Container from "@material-ui/core/Container";
@@ -12,7 +11,6 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 
 import { loginUser } from "../actions";
-import LoginLeftComponent from "./LoginLeftComponent";
 
 const styles = () => ({
   "@global": { body: { background: `beige`, padding: 0, margin: 0 } },
@@ -22,8 +20,9 @@ const styles = () => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    width: "90%",
   },
-  paper: { width: "60vw", overflow: "hidden", borderRadius: "20px" },
+  paper: { width: "100%", overflow: "hidden", borderRadius: "20px", padding: "1rem" },
   loginRightPart: {
     width: "50%",
     height: "initial",
@@ -85,9 +84,6 @@ class Login extends Component {
       return (
         <Container className={classes.mainContainer}>
           <Paper className={classes.paper} elevation={24}>
-            <Grid container alignItems="stretch" direction="row">
-              <LoginLeftComponent />
-              <Grid item className={classes.loginRightPart}>
                 <div className={classes.logoTextContainer}>
                   <img
                     className={classes.logoTextImage}
@@ -169,8 +165,6 @@ class Login extends Component {
                   </Typography>
                 </Link>
             </div>
-              </Grid>
-            </Grid>
           </Paper>
         </Container>
       );
